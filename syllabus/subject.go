@@ -11,17 +11,17 @@ import (
 // Subject 科目の詳細のページに相当
 type Subject struct {
 	// CourseTitle 科目名
-	CourseTitle string
+	CourseTitle string `json:"course_title,omitempty"`
 	// Update 更新日
-	Update string
+	Update string `json:"update,omitempty"`
 	// TimetableCode 時間割コード
-	TimetableCode string
+	TimetableCode string `json:"timetable_code,omitempty"`
 	// URL 科目詳細ページへのURL
-	URL string
+	URL string `json:"url,omitempty"`
 	// JapaneseValues 科目詳細ページの日本語の小見出しと内容のmap
-	JapaneseValues map[string]string
+	JapaneseValues map[string]string `json:"japanese_values,omitempty"`
 	// EnglishValues 科目詳細ページの英語の小見出しと内容のmap
-	EnglishValues map[string]string
+	EnglishValues map[string]string `json:"english_values,omitempty"`
 }
 
 const updatePrefix string = "更新日："
