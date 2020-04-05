@@ -10,29 +10,29 @@ import (
 
 // Table 科目一覧の表のページに相当
 type Table struct {
-	Subjects []*ConciseSubject
+	Subjects []*ConciseSubject `json:"subjects,omitempty"`
 	// PrevStartIndex [前のn件]のボタンのstartIndex
-	PrevStartIndex string
+	PrevStartIndex string `json:"prev_start_index,omitempty"`
 	// NextStartIndex [次のn件]のボタンのstartIndex
-	NextStartIndex string
+	NextStartIndex string `json:"next_start_index,omitempty"`
 }
 
 // ConciseSubject 科目一覧の表の科目（情報がSubjectより少ない）
 type ConciseSubject struct {
 	// TimetableCode 時間割コード
-	TimetableCode string
+	TimetableCode string `json:"timetable_code,omitempty"`
 	// CourseTitle 科目名
-	CourseTitle string
+	CourseTitle string `json:"course_title,omitempty"`
 	// Semester 開講期
-	Semester string
+	Semester string `json:"semester,omitempty"`
 	// DayAndPeriod 開講時間帯
-	DayAndPeriod string
+	DayAndPeriod string `json:"day_and_period,omitempty"`
 	// Grade 対象学年
-	Grade string
+	Grade string `json:"grade,omitempty"`
 	// Credits 単位数
-	Credits string
+	Credits string `json:"credits,omitempty"`
 	// Update 更新日
-	Update string
+	Update string `json:"update,omitempty"`
 }
 
 func makeTable(body io.Reader) (*Table, error) {
